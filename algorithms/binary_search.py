@@ -1,9 +1,12 @@
-
 def binary_search(arr, target):
+
+    if not arr:
+        return -1
+
     left = 0
     right = len(arr) - 1
 
-    while left <=  right:
+    while left <= right:
         mid = (left + right) // 2
 
         if arr[mid] == target:
