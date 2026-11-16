@@ -1,3 +1,3 @@
 # Git Laboratory
-Git branches and history
+Мой проект (версия из main)
 Изменение для проверки синхронизации двух копий.
