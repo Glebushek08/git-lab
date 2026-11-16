@@ -1,3 +1,4 @@
+cat << 'EOF' > .github/workflows/ci.yml
 name: CI Pipeline
 
 on:
@@ -15,7 +16,6 @@ jobs:
           fetch-depth: 0
 
       - name: TruffleHog Secret Scan
-        uses: trufflesecurity/trufflehog@main
-        with:
-          path: ./
-          extra_args: --no-verification
+        run: |
+          docker run --rm -v "$PWD:/pwd" trufflesecurity/trufflehog:latest filesystem /pwd --no-verification
+EOF
