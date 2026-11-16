@@ -1,4 +1,4 @@
-cat << 'EOF' > .github/workflows/ci.yml
+
 name: CI Pipeline
 
 on:
@@ -17,5 +17,4 @@ jobs:
 
       - name: TruffleHog Secret Scan
         run: |
-          docker run --rm -v "$PWD:/pwd" trufflesecurity/trufflehog:latest filesystem /pwd --no-verification
-EOF
+          docker run --rm -v "$PWD:/pwd" trufflesecurity/trufflehog:latest filesystem /pwd --no-verification --fail
